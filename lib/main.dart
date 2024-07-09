@@ -5,9 +5,9 @@ import 'package:flutter/services.dart';
 
 void main() {
 
-    //  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle( 
-    //         statusBarColor: Colors.white, 
-    //   )); 
+     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle( 
+            statusBarColor: Colors.white, 
+      )); 
   runApp(const MyApp());
 }
 
@@ -20,8 +20,10 @@ class MyApp extends StatelessWidget {
     return   MaterialApp(
       debugShowCheckedModeBanner: false,
       debugShowMaterialGrid: false,
-      theme: ThemeData.dark().copyWith(scaffoldBackgroundColor:kPrimaryColor),
-      home:SplashView() ,
+      theme: ThemeData.dark().copyWith(scaffoldBackgroundColor:kPrimaryColor,
+      //textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme)
+      ),
+      home:const SplashView() ,
   
     );
   }
