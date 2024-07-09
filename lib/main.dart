@@ -1,8 +1,13 @@
 import 'package:booklyapp/constants.dart';
 import 'package:booklyapp/features/splash/pressntation/views/splash_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+
+    //  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle( 
+    //         statusBarColor: Colors.white, 
+    //   )); 
   runApp(const MyApp());
 }
 
