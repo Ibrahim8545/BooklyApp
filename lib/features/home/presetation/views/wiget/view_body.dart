@@ -2,6 +2,7 @@
 import 'package:booklyapp/core/utils/assets.dart';
 import 'package:booklyapp/features/home/presetation/views/wiget/custom_app_bar.dart';
 import 'package:booklyapp/features/home/presetation/views/wiget/custom_list_view_items.dart';
+import 'package:booklyapp/features/home/presetation/views/wiget/featured_list_view_item.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -12,10 +13,9 @@ class HomeViewBody extends StatelessWidget {
     return const Column(
       children: [
         CustomAppBar(),
-        CustomListViewItems()
+        FeaturedBooksListView()
 
       ],
     );
   }
 }
-
