@@ -1,4 +1,5 @@
 import 'package:booklyapp/core/utils/assets.dart';
+import 'package:booklyapp/features/home/presetation/views/home_view.dart';
 import 'package:flutter/material.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -17,23 +18,18 @@ class _SplashViewBodyState extends State<SplashViewBody>with SingleTickerProvide
   void initState() {
    
     super.initState();
-    animationController=AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 1)
-      );
-      
-      slidingAnimation=
-      Tween<Offset>(begin:const  Offset(0, 10),end: Offset.zero)
-      .animate(animationController);
-
-      animationController.forward();
+    initSlidingAnimatiom();
+    navigatToHome();
 
       
   }
 
+  
+
+
   @override
   void dispose() {
-    // TODO: implement dispose
+  
     super.dispose();
   }
   @override
@@ -59,4 +55,33 @@ class _SplashViewBodyState extends State<SplashViewBody>with SingleTickerProvide
       ],
     );
   }
+
+
+  void initSlidingAnimatiom() {
+    animationController=AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1)
+      );
+      
+      slidingAnimation=
+      Tween<Offset>(begin:const  Offset(0, 10),end: Offset.zero)
+      .animate(animationController);
+    
+      animationController.forward();
+  }
+
+  void navigatToHome() {
+     Future.delayed(
+      const Duration(seconds: 2),()
+      {
+              Navigator.push(context, 
+      MaterialPageRoute(builder:(context) =>const  HomeView()));
+      
+      }
+    );
+  }
+
 }
+
+
+  
