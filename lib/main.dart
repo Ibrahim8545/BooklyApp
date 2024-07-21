@@ -1,7 +1,9 @@
 import 'package:booklyapp/constants.dart';
+import 'package:booklyapp/core/utils/app_router.dart';
 import 'package:booklyapp/features/splash/pressntation/views/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:go_router/go_router.dart';
 
 
 void main() {
@@ -18,13 +20,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: AppRouter.router,
       debugShowCheckedModeBanner: false,
       debugShowMaterialGrid: false,
       theme: ThemeData.dark().copyWith(scaffoldBackgroundColor:kPrimaryColor,
       //textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme)
       ),
-      home:const SplashView() ,
+     
   
     );
   }
