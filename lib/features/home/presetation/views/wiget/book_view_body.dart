@@ -4,6 +4,7 @@ import 'package:booklyapp/features/home/presetation/views/wiget/book_action.dart
 import 'package:booklyapp/features/home/presetation/views/wiget/book_rating.dart';
 import 'package:booklyapp/features/home/presetation/views/wiget/custom_book_details_app_bar.dart';
 import 'package:booklyapp/features/home/presetation/views/wiget/custom_list_view_items.dart';
+import 'package:booklyapp/features/home/presetation/views/wiget/simlar_box_list_view.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/systles.dart';
@@ -27,12 +28,12 @@ class BookDetailsViewBody extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: width * .17),
             child: const CustomBookImage(),
           ),
-          const SizedBox(height: 47,),
+          const SizedBox(height: 35,),
           Text(
             'The Jungle Book',
             style: Styles.textStyle30.copyWith(fontWeight: FontWeight.bold),
           ),
-          const SizedBox(height: 6,),
+          const SizedBox(height: 0,),
            Text(
             'Rudyard Kilpling',
             style: Styles.textStyle18.copyWith(
@@ -45,13 +46,24 @@ class BookDetailsViewBody extends StatelessWidget {
           BookRating(
             mainAxisAlignment: MainAxisAlignment.center,
           ),
-          const SizedBox(height: 37,),
-          const BooksAction()
+          const SizedBox(height: 35,),
+          const BooksAction(),
+          const SizedBox(height:30,),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              'You can also like',
+              style: Styles.textStyle16.copyWith(
+                fontWeight: FontWeight.w600
+              ),
+            ),
+          ),
+           const SizedBox(height:16,),
+          const SimilarBookListView(),
+           const SizedBox(height:40,),
+
         ],
       ),
     );
   }
 }
-
-
-
