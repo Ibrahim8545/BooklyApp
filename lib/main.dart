@@ -1,17 +1,21 @@
 import 'package:booklyapp/constants.dart';
 import 'package:booklyapp/core/utils/app_router.dart';
+import 'package:booklyapp/features/home/domain/enties/book_entity.dart';
 import 'package:booklyapp/features/splash/pressntation/views/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hive/hive.dart';
 
 
-void main() {
+void main() async{
 
      SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle( 
             statusBarColor: kPrimaryColor, 
       )); 
   runApp(const MyApp());
+  Hive.registerAdapter(BookEntityAdapter());
+  await  Hive.openBox(kFeaturedBox);
 }
 
 class MyApp extends StatelessWidget {
