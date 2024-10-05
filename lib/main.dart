@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 
 void main() async{
@@ -13,9 +14,12 @@ void main() async{
      SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle( 
             statusBarColor: kPrimaryColor, 
       )); 
-  runApp(const MyApp());
-  Hive.registerAdapter(BookEntityAdapter());
+      Hive.initFlutter();
+      Hive.registerAdapter(BookEntityAdapter());
   await  Hive.openBox(kFeaturedBox);
+  await  Hive.openBox(kNewestBox);
+  runApp(const MyApp());
+  
 }
 
 class MyApp extends StatelessWidget {
