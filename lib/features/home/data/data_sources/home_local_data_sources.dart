@@ -9,13 +9,13 @@ abstract class HomeRemoteDataSourcse {
 class HomeLocalDataSourcseImp extends HomeRemoteDataSourcse
 {
   @override
-  Future<List<dynamic>> fetchFeaturedBooks() {
+List<BookEntity> fetchFeaturedBooks() {
     // TODO: implement fetchFeaturedBooks
     throw UnimplementedError();
   }
 
   @override
-  Future<List<dynamic>> fetchNewsBooks() {
+  List<BookEntity> fetchNewsBooks() {
     // TODO: implement fetchNewsBooks
     throw UnimplementedError();
   }
