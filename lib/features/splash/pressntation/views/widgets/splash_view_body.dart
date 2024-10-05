@@ -48,6 +48,11 @@ class _SplashViewBodyState extends State<SplashViewBody>with SingleTickerProvide
               child: const Text(
                 'Read Free Books',
                 textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold
+                ),
                 ),
             );
           }
