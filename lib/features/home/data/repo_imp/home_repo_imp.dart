@@ -29,9 +29,18 @@ class HomeRepoImp extends HomeRepo
   }
 
   @override
-  Future<Either<Failure, List<BookEntity>>> fetchNewsBooks() {
-    // TODO: implement fetchNewsBooks
-    throw UnimplementedError();
+  Future<Either<Failure, List<BookEntity>>> fetchNewsBooks() async{
+       try {
+      var booklist=homeLocalDataSourcse.fetchNewsBooks();
+      if(booklist.isNotEmpty)
+      {
+        return right(booklist);
+      }
+      var book=await homeRemoteDataSourcse.fetchNewsBooks();
+      return right(book);
+    } catch (e) {
+      return left(Failure());
+    }
   }
 
 }
